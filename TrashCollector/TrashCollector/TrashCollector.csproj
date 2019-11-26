@@ -179,6 +179,14 @@
     <Compile Include="Migrations\201911261545374_InitialMigration.Designer.cs">
       <DependentUpon>201911261545374_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911262124279_updatedParameters.cs" />
+    <Compile Include="Migrations\201911262124279_updatedParameters.Designer.cs">
+      <DependentUpon>201911262124279_updatedParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911262142497_thirdnew.cs" />
+    <Compile Include="Migrations\201911262142497_thirdnew.Designer.cs">
+      <DependentUpon>201911262142497_thirdnew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -274,6 +282,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911261545374_InitialMigration.resx">
       <DependentUpon>201911261545374_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911262124279_updatedParameters.resx">
+      <DependentUpon>201911262124279_updatedParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911262142497_thirdnew.resx">
+      <DependentUpon>201911262142497_thirdnew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
