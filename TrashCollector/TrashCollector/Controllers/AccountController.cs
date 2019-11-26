@@ -144,7 +144,7 @@ namespace TrashCollector.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            ViewBag.Name =context.Roles.ToList();
             return View();
         }
 
@@ -170,7 +170,10 @@ namespace TrashCollector.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
+                    
                 }
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                  .ToList(), "Name", "Name");
                 AddErrors(result);
             }
 
