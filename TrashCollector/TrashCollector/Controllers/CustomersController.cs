@@ -59,7 +59,7 @@ namespace TrashCollector.Controllers
                 customer.ApplicationId = newuserid;
                 db.customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Customers", new { customer.id });
             }
 
             return View(customer);

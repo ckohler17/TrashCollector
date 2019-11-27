@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201911271754182_AddedProperty.Designer.cs">
       <DependentUpon>201911271754182_AddedProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911271829307_changedbalanceproperty.cs" />
+    <Compile Include="Migrations\201911271829307_changedbalanceproperty.Designer.cs">
+      <DependentUpon>201911271829307_changedbalanceproperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911271754182_AddedProperty.resx">
       <DependentUpon>201911271754182_AddedProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271829307_changedbalanceproperty.resx">
+      <DependentUpon>201911271829307_changedbalanceproperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
