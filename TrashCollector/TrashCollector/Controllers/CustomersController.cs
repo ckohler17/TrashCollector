@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -13,15 +14,19 @@ namespace TrashCollector.Controllers
     public class CustomersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private object[] id;
+
+        public object[] Id { get; private set; }
 
         // GET: Customers
+        [Authorize]
         public ActionResult Index()
-        {
+        {            
             return View(db.customers.ToList());
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -46,10 +51,12 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended")] Customer customer)
+        public ActionResult Create([Bind(Include = "id,name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended,applicationId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
+                string newuserid = User.Identity.GetUserId();
+                customer.ApplicationId = newuserid;
                 db.customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,7 +66,7 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Customers/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -78,8 +85,9 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended")] Customer customer)
-        {
+        
+        public ActionResult Edit([Bind(Include = "id,name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended,applicationId")] Customer customer)
+        {            
             if (ModelState.IsValid)
             {
                 db.Entry(customer).State = EntityState.Modified;
@@ -90,7 +98,7 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Customers/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -107,7 +115,7 @@ namespace TrashCollector.Controllers
         // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int? id)
         {
             Customer customer = db.customers.Find(id);
             db.customers.Remove(customer);

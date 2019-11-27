@@ -187,6 +187,22 @@
     <Compile Include="Migrations\201911262142497_thirdnew.Designer.cs">
       <DependentUpon>201911262142497_thirdnew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911271344460_addedDisplayNames.cs" />
+    <Compile Include="Migrations\201911271344460_addedDisplayNames.Designer.cs">
+      <DependentUpon>201911271344460_addedDisplayNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271530156_addedparameterstomyview.cs" />
+    <Compile Include="Migrations\201911271530156_addedparameterstomyview.Designer.cs">
+      <DependentUpon>201911271530156_addedparameterstomyview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271644048_debuggingSaysINeedTo.cs" />
+    <Compile Include="Migrations\201911271644048_debuggingSaysINeedTo.Designer.cs">
+      <DependentUpon>201911271644048_debuggingSaysINeedTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271754182_AddedProperty.cs" />
+    <Compile Include="Migrations\201911271754182_AddedProperty.Designer.cs">
+      <DependentUpon>201911271754182_AddedProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -288,6 +304,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911262142497_thirdnew.resx">
       <DependentUpon>201911262142497_thirdnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271344460_addedDisplayNames.resx">
+      <DependentUpon>201911271344460_addedDisplayNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271530156_addedparameterstomyview.resx">
+      <DependentUpon>201911271530156_addedparameterstomyview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271644048_debuggingSaysINeedTo.resx">
+      <DependentUpon>201911271644048_debuggingSaysINeedTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271754182_AddedProperty.resx">
+      <DependentUpon>201911271754182_AddedProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
