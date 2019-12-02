@@ -19,7 +19,11 @@ namespace TrashCollector.Controllers
         public ActionResult Index()
         {
             string userid = User.Identity.GetUserId();
-            return View(db.employees.Where(e=>e.Zip ==        }
+            var myemp = db.employees.Where(e=>e.ApplicationId == userid).FirstOrDefault();
+            var cust = db.customers.Where(c=>c.ZipCode == myemp.Zip).Where(c => c.PickUpDay == (DateTime.Today.DayOfWeek).ToString()).ToList();            
+            return View(cust);
+            //return View(db.employees.ToList());
+        }
 
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
