@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -17,11 +18,11 @@ namespace TrashCollector.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            return View(db.employees.ToList());
-        }
+            string userid = User.Identity.GetUserId();
+            return View(db.employees.Where(e=>e.Zip ==        }
 
         // GET: Employees/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -46,10 +47,12 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "name,zipCode")] Employee employee)
+        public ActionResult Create([Bind(Include = "name,firstName,lastName,zip,ApplicationId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
+                string newuserid = User.Identity.GetUserId();
+                employee.ApplicationId = newuserid;
                 db.employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,7 +62,7 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Employees/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -90,7 +93,7 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Employees/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -107,7 +110,7 @@ namespace TrashCollector.Controllers
         // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int? id)
         {
             Employee employee = db.employees.Find(id);
             db.employees.Remove(employee);

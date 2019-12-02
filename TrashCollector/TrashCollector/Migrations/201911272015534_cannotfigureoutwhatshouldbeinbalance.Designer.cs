@@ -7,13 +7,13 @@ namespace TrashCollector.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class changedbalanceproperty : IMigrationMetadata
+    public sealed partial class cannotfigureoutwhatshouldbeinbalance : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changedbalanceproperty));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(cannotfigureoutwhatshouldbeinbalance));
         
         string IMigrationMetadata.Id
         {
-            get { return "201911271829307_changedbalanceproperty"; }
+            get { return "201911272015534_cannotfigureoutwhatshouldbeinbalance"; }
         }
         
         string IMigrationMetadata.Source

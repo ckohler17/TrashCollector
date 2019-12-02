@@ -14,15 +14,16 @@ namespace TrashCollector.Controllers
     public class CustomersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        private object[] id;
+        
 
         public object[] Id { get; private set; }
 
         // GET: Customers
         [Authorize]
         public ActionResult Index()
-        {            
-            return View(db.customers.ToList());
+        {
+            string userid = User.Identity.GetUserId();
+            return View(db.customers.Where(c=>c.ApplicationId == userid).ToList());
         }
 
         // GET: Customers/Details/5

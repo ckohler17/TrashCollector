@@ -48,6 +48,8 @@ namespace TrashCollector.Models
 
     public class LoginViewModel
     {
+        internal object id;
+
         [Required]
         [Display(Name = "Email")]
         [EmailAddress]
@@ -60,6 +62,7 @@ namespace TrashCollector.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+        public string UserRoles { get; internal set; }
     }
 
     public class RegisterViewModel

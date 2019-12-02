@@ -203,9 +203,21 @@
     <Compile Include="Migrations\201911271754182_AddedProperty.Designer.cs">
       <DependentUpon>201911271754182_AddedProperty.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911271829307_changedbalanceproperty.cs" />
-    <Compile Include="Migrations\201911271829307_changedbalanceproperty.Designer.cs">
-      <DependentUpon>201911271829307_changedbalanceproperty.cs</DependentUpon>
+    <Compile Include="Migrations\201911272007407_puttingBalanceBackToHowIHadIt.cs" />
+    <Compile Include="Migrations\201911272007407_puttingBalanceBackToHowIHadIt.Designer.cs">
+      <DependentUpon>201911272007407_puttingBalanceBackToHowIHadIt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911272015534_cannotfigureoutwhatshouldbeinbalance.cs" />
+    <Compile Include="Migrations\201911272015534_cannotfigureoutwhatshouldbeinbalance.Designer.cs">
+      <DependentUpon>201911272015534_cannotfigureoutwhatshouldbeinbalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912012155321_changeddisplaynames.cs" />
+    <Compile Include="Migrations\201912012155321_changeddisplaynames.Designer.cs">
+      <DependentUpon>201912012155321_changeddisplaynames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912012203165_updatingemployeepropertiesagain.cs" />
+    <Compile Include="Migrations\201912012203165_updatingemployeepropertiesagain.Designer.cs">
+      <DependentUpon>201912012203165_updatingemployeepropertiesagain.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -321,8 +333,17 @@
     <EmbeddedResource Include="Migrations\201911271754182_AddedProperty.resx">
       <DependentUpon>201911271754182_AddedProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911271829307_changedbalanceproperty.resx">
-      <DependentUpon>201911271829307_changedbalanceproperty.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911272007407_puttingBalanceBackToHowIHadIt.resx">
+      <DependentUpon>201911272007407_puttingBalanceBackToHowIHadIt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911272015534_cannotfigureoutwhatshouldbeinbalance.resx">
+      <DependentUpon>201911272015534_cannotfigureoutwhatshouldbeinbalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912012155321_changeddisplaynames.resx">
+      <DependentUpon>201912012155321_changeddisplaynames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912012203165_updatingemployeepropertiesagain.resx">
+      <DependentUpon>201912012203165_updatingemployeepropertiesagain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

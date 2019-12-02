@@ -10,10 +10,17 @@ namespace TrashCollector.Models
     public class Employee
     {
         [Key]
+        
+        [Display(Name = "Employee ID")]
         public int Id { get; set; }
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        public string ZipCode { get; set; }
+        [Display(Name = "Zip Code")]
+        public string Zip { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
