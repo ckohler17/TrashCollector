@@ -39,6 +39,9 @@ namespace TrashCollector.Models
         [Display(Name = "Extra Pickup Date")]        
         public string ExtraPickUpDate { get; set; }
 
+        [Display(Name = "Search PickUps By Day Of Week")]
+        public string SearchForPickUp { get; set; }
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }

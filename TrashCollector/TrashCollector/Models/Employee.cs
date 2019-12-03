@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace TrashCollector.Models
 {
@@ -22,8 +23,10 @@ namespace TrashCollector.Models
         [Display(Name = "Zip Code")]
         public string Zip { get; set; }
 
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+        public DayOfWeek DayOfWeek { get; set; }
     }
 }

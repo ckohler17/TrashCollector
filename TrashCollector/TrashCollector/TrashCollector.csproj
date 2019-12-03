@@ -219,6 +219,14 @@
     <Compile Include="Migrations\201912012203165_updatingemployeepropertiesagain.Designer.cs">
       <DependentUpon>201912012203165_updatingemployeepropertiesagain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912022006088_addingpropertytoemployeefordaysofweek.cs" />
+    <Compile Include="Migrations\201912022006088_addingpropertytoemployeefordaysofweek.Designer.cs">
+      <DependentUpon>201912022006088_addingpropertytoemployeefordaysofweek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912031355402_addingpropertytosearchforpickups.cs" />
+    <Compile Include="Migrations\201912031355402_addingpropertytosearchforpickups.Designer.cs">
+      <DependentUpon>201912031355402_addingpropertytosearchforpickups.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -344,6 +352,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912012203165_updatingemployeepropertiesagain.resx">
       <DependentUpon>201912012203165_updatingemployeepropertiesagain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912022006088_addingpropertytoemployeefordaysofweek.resx">
+      <DependentUpon>201912022006088_addingpropertytoemployeefordaysofweek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912031355402_addingpropertytosearchforpickups.resx">
+      <DependentUpon>201912031355402_addingpropertytosearchforpickups.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
