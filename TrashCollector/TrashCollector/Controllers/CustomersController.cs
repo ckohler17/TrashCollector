@@ -88,7 +88,8 @@ namespace TrashCollector.Controllers
         [ValidateAntiForgeryToken]
         
         public ActionResult Edit([Bind(Include = "id,name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended,applicationId")] Customer customer)
-        {            
+        {          
+            
             if (ModelState.IsValid)
             {
                 db.Entry(customer).State = EntityState.Modified;

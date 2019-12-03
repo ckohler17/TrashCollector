@@ -114,23 +114,8 @@
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id })
     </td>
 </tr>
     }
 </table>
-
-
-@*<select asp-for="DayOfWeek" asp-items="Html.GetEnumSelectList<DayOfWeek>()">
-        <option value="">Choose a day</option>
-    </select>
-
-    <select data-val="true" data-val-required="The DayOfWeek field is required." id="DayOfWeek" name="DayOfWeek">
-        <option value="">Pick one</option>
-        <option selected="selected" value="0">Sunday</option>
-        <option value="1">Monday</option>
-        <option value="2">Tuesday</option>
-        <option value="3">Wednesday</option>
-        <option value="4">Thursday</option>
-        <option value="5">Friday</option>
-        <option value="6">Saturday</option>
-    </select>*@

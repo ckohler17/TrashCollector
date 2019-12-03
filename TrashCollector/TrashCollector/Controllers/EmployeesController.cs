@@ -42,12 +42,12 @@ namespace TrashCollector.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.employees.Find(id);
-            if (employee == null)
+            Customer customer = db.customers.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(customer);
         }
 
         // GET: Employees/Create
