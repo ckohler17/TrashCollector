@@ -227,6 +227,14 @@
     <Compile Include="Migrations\201912031355402_addingpropertytosearchforpickups.Designer.cs">
       <DependentUpon>201912031355402_addingpropertytosearchforpickups.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912031923435_addingpropertytoconfirmdelivery.cs" />
+    <Compile Include="Migrations\201912031923435_addingpropertytoconfirmdelivery.Designer.cs">
+      <DependentUpon>201912031923435_addingpropertytoconfirmdelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912031959194_changingpropertyfrombooltostringtoconfirmpickup.cs" />
+    <Compile Include="Migrations\201912031959194_changingpropertyfrombooltostringtoconfirmpickup.Designer.cs">
+      <DependentUpon>201912031959194_changingpropertyfrombooltostringtoconfirmpickup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -295,13 +303,14 @@
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
-    <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Customers\Delete.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Employees\Filter.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +367,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912031355402_addingpropertytosearchforpickups.resx">
       <DependentUpon>201912031355402_addingpropertytosearchforpickups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912031923435_addingpropertytoconfirmdelivery.resx">
+      <DependentUpon>201912031923435_addingpropertytoconfirmdelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912031959194_changingpropertyfrombooltostringtoconfirmpickup.resx">
+      <DependentUpon>201912031959194_changingpropertyfrombooltostringtoconfirmpickup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,6 +24,16 @@ namespace TrashCollector.Controllers
             return View(cust);
             //return View(db.employees.ToList());
         }
+        
+        [HttpPost]
+        public ActionResult Filter(string FilterDayOfWeek)
+        {
+            string userid = User.Identity.GetUserId();
+            var myemp = db.employees.Where(e => e.ApplicationId == userid).FirstOrDefault();
+            var cust = db.customers.Where(c => c.ZipCode == myemp.Zip).Where(c => c.PickUpDay == FilterDayOfWeek.ToString()).ToList();
+            return View(cust);
+        }
+
 
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
@@ -66,34 +76,64 @@ namespace TrashCollector.Controllers
         }
 
         // GET: Employees/Edit/5
-        public ActionResult Edit(int? id)
-        {  
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Employee employee = db.employees.Find(id);
-            if (employee == null)
-            {
-                return HttpNotFound();
-            }
-            return View(employee);
-        }
+        //public ActionResult Edit(int? id)
+        //{  
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Employee employee = db.employees.Find(id);
+        //    if (employee == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(employee);
+        //}
 
         // POST: Employees/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "name,zipCode")] Employee employee)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(employee).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(employee);
+        //}
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = db.customers.Find(id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "name,zipCode")] Employee employee)
+        public ActionResult Edit([Bind(Include = "id,name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended,PickUpCompleted,Balance,applicationId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employee).State = EntityState.Modified;
+                db.Entry(customer).State = EntityState.Modified;
+                if (customer.PickUpCompleted == "Yes")
+                {
+                    customer.Balance += 20.00;
+                } 
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(employee);
+            return View(customer);
         }
 
         // GET: Employees/Delete/5
