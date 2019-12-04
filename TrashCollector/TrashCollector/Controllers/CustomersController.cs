@@ -13,10 +13,8 @@ namespace TrashCollector.Controllers
 {
     public class CustomersController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-        
+        private ApplicationDbContext db = new ApplicationDbContext();        
 
-        public object[] Id { get; private set; }
 
         // GET: Customers
         [Authorize]
@@ -52,7 +50,7 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended,applicationId")] Customer customer)
+        public ActionResult Create([Bind(Include = "id,name,firstname,lastname,streetAddress,city,state,zipCode,pickUpDay,applicationId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +85,7 @@ namespace TrashCollector.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         
-        public ActionResult Edit([Bind(Include = "id,name,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,isSuspended,applicationId")] Customer customer)
+        public ActionResult Edit([Bind(Include = "id,name,firstname,lastname,streetAddress,city,state,zipCode,pickUpDay,startDate,endDate,extrapickupdate,applicationId")] Customer customer)
         {          
             
             if (ModelState.IsValid)

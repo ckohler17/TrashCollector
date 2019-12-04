@@ -32,9 +32,7 @@
         <th>
             @Html.DisplayNameFor(model => model.EndDate)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsSuspended)
-        </th>
+
         <th></th>
     </tr>
 
@@ -61,9 +59,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.EndDate)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsSuspended)
-        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) 

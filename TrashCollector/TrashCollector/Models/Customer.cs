@@ -4,12 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace TrashCollector.Models
 {
     public class Customer
     {
-        [Key]
+        [Key]     
         [Display(Name = "Id")]
         public int id { get; set; }
         [Display(Name = "Name")]
@@ -30,12 +31,12 @@ namespace TrashCollector.Models
         public double Balance { get; set; }
         [Display(Name = "Pick Up Day")]
         public string PickUpDay { get; set; }
-        [Display(Name = "Start Date")]
+        [Display(Name = "Susepnd Service Start Date")]
         public string StartDate { get; set; }
-        [Display(Name = "End Date")]
+        [Display(Name = "Suspend Service End Date")]
         public string EndDate { get; set; }
-        [Display(Name = "Service Susended")]
-        public bool IsSuspended { get; set; }
+
+
         [Display(Name = "Extra Pickup Date")]        
         public string ExtraPickUpDate { get; set; }
 
@@ -46,6 +47,7 @@ namespace TrashCollector.Models
         public string SearchForPickUp { get; set; }
 
         [ForeignKey("ApplicationUser")]
+        [HiddenInput(DisplayValue =false)]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
         
