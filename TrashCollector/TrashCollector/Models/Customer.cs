@@ -47,7 +47,6 @@ namespace TrashCollector.Models
         public string SearchForPickUp { get; set; }
 
         [ForeignKey("ApplicationUser")]
-        [HiddenInput(DisplayValue =false)]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
         
